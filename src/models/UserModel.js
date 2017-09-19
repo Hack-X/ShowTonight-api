@@ -1,6 +1,6 @@
-import mongoose from "mongoose";
+// Model de la route '/users'Ò
 
-// Use native promises
+import mongoose from "mongoose";
 mongoose.Promise = global.Promise;
 
 let UserSchema = new mongoose.Schema({

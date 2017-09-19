@@ -1,4 +1,5 @@
-// Load different configs for production or development
+// Chargement du fichier de configuration de production ou de développement
+
 let configFile = '';
 
 if (process.env.NODE_ENV === "production") {
