@@ -1,10 +1,10 @@
 // Liste des erreurs que l'API peut renvoyer
 
 const list = {
-  noUserError: {
+  noShowError: {
     code: 500,
-    error: 'noUserError',
-    error_description: 'La base ne contient pas d\'utilisateur'
+    error: 'noShowError',
+    error_description: 'La base ne contient pas de show'
   },
 };
 
