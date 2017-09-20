@@ -1,10 +1,15 @@
 // Liste des erreurs que l'API peut renvoyer
 
 const list = {
+  noShowsError: {
+    code: 500,
+    error: 'noShowsError',
+    error_description: 'La base ne contient pas de show'
+  },
   noShowError: {
     code: 500,
     error: 'noShowError',
-    error_description: 'La base ne contient pas de show'
+    error_description: 'Ce show n\'existe pas'
   },
 };
 

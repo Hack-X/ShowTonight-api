@@ -17,6 +17,7 @@ export default {
     .then((data) => {
       res.send('ok');
     }, (err) => {
+      console.log(err);
       res.status(Errors(err).code).send(Errors(err));
     });
   },

@@ -7,21 +7,29 @@
    <th>description</th>
    <th>capacity</th>
    <th>price</th>
-   <th>image</th>
    <th>date</th>
  </thead>
 
   {{#list data}}
 
   <tr>
-    <td>{{name}}</td>
+    <td>
+      <a class="btn btn-primary" href="/shows/{{id}}" role="button">
+        {{name}}
+      </a>
+    </td>
     <td>{{venue}}</td>
     <td>{{description}}</td>
     <td>{{capacity}}</td>
     <td>{{price}}</td>
-    <td>{{image}}</td>
     <td>{{date}}</td>
   </tr>
 
   {{/list}}
 </table>
+
+<div class="text-center">
+  <a class="btn btn-primary" href="/shows/create" role="button">
+    Ajouter un show
+  </a>
+</div>

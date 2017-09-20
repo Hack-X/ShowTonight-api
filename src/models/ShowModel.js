@@ -12,7 +12,7 @@ let Schema = new mongoose.Schema({
   capacity: { type: Number },     // la capacité du show
   price: { type: Number },        // le prix
   image: { type: String },        // l'url de l'image
-  date: { type: Date },           // la dte tu concert
+  date: { type: String },         // la date du concert
 });
 
 let Model = mongoose.model('Show', Schema);
@@ -28,6 +28,10 @@ const ShowModel = {
 
   getShows: () => {
     return Model.find({}).exec();
+  },
+
+  getShow: (_id) => {
+    return Model.findOne({ _id }).exec();
   },
 
   removeShows: () => {

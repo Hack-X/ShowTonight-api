@@ -76,7 +76,12 @@ server.post('/seeddb', SeedDbController.seedDb);
 // Routes pour les vues
 server.get('/', HomeController.index);
 server.get('/shows', ShowController.shows);
+server.get('/shows/create', ShowController.createShow);
+server.post('/shows/create', ShowController.postCreateShow);
+server.get('/shows/:id', ShowController.show);
 
 // Routes pour les APIs
 server.get('/api/', HomeController.indexApi);
 server.get('/api/shows', ShowController.showsApi);
+server.post('/api/shows/create', ShowController.createShowApi);
+server.get('/api/shows/:id', ShowController.showApi);
