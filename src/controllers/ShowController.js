@@ -42,7 +42,7 @@ export default {
     getShows()
     .then((data) => {
       // data contient une liste de shows
-      res.render('shows', {test: 'coucou', data: data} );
+      res.render('shows', { data });
     }, (err) => {
       res.status(Errors(err).code).send(Errors(err));
     });

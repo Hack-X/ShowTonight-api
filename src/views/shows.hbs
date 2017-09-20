@@ -1,12 +1,27 @@
 <h1>Shows</h1>
 
-<div>
-  {{test}}
-</div>
+<table class="table">
+ <thead>
+   <th>name</th>
+   <th>venue</th>
+   <th>description</th>
+   <th>capacity</th>
+   <th>price</th>
+   <th>image</th>
+   <th>date</th>
+ </thead>
 
+  {{#list data}}
 
-{{#list data}}
-<div class="tr-show">
-  {{name}}
-</tr>
-{{/list}}
+  <tr>
+    <td>{{name}}</td>
+    <td>{{venue}}</td>
+    <td>{{description}}</td>
+    <td>{{capacity}}</td>
+    <td>{{price}}</td>
+    <td>{{image}}</td>
+    <td>{{date}}</td>
+  </tr>
+
+  {{/list}}
+</table>
