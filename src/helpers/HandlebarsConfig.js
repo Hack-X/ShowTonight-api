@@ -2,7 +2,7 @@ import path from "path";
 
 export default {
   extname: '.hbs',
-  layoutsDir: path.join(__dirname, '../views/layouts'),
+  layoutsDir: path.resolve('./src/views/layouts'),
   defaultLayout: 'main',
   helpers: {
     list: (items, options) => {
