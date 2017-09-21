@@ -2,27 +2,46 @@
 
 <table class="table">
  <thead>
-   <th>name</th>
-   <th>venue</th>
-   <th>description</th>
-   <th>capacity</th>
-   <th>price</th>
-   <th>date</th>
+   <th>Name</th>
+   <th>Venue</th>
+   <th>Description</th>
+   <th>Capacity</th>
+   <th>Price</th>
+   <th>Date</th>
+   <th>Actions</th>
  </thead>
 
   {{#list data}}
 
   <tr>
     <td>
-      <a class="btn btn-primary" href="/shows/{{id}}" role="button">
+      <a class="btn btn-secondary btn-sm" href="/shows/id/{{id}}" role="button">
         {{name}}
       </a>
     </td>
-    <td>{{venue}}</td>
-    <td>{{description}}</td>
-    <td>{{capacity}}</td>
-    <td>{{price}}</td>
-    <td>{{date}}</td>
+    <td>
+      {{venue}}
+    </td>
+    <td>
+      {{description}}
+    </td>
+    <td>
+      {{capacity}}
+    </td>
+    <td>
+      {{price}}
+    </td>
+    <td>
+      {{date}}
+    </td>
+    <td>
+      <a class="btn btn-outline-secondary btn-sm" href="/shows/update/{{id}}" role="button">
+        Update
+      </a>
+      <a class="btn btn-outline-danger btn-sm" href="/shows/delete/{{id}}" role="button">
+        Delete
+      </a>
+    </td>
   </tr>
 
   {{/list}}
@@ -30,6 +49,6 @@
 
 <div class="text-center">
   <a class="btn btn-primary" href="/shows/create" role="button">
-    Ajouter un show
+    Add a show
   </a>
 </div>

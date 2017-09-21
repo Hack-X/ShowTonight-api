@@ -7,7 +7,7 @@ import ShowModel from "../models/ShowModel";
 export default {
   seedDb: (req, res) => {
     return Promise.all([
-      ShowModel.removeShows(),
+      ShowModel.deleteShows(),
     ])
     .then((data) => {
       return Promise.all([

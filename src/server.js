@@ -74,14 +74,19 @@ mongoose.connect('mongodb://' + process.env.DB_USERNAME + ':' + process.env.DB_P
 server.post('/seeddb', SeedDbController.seedDb);
 
 // Routes pour les vues
-server.get('/', HomeController.index);
-server.get('/shows', ShowController.shows);
-server.get('/shows/create', ShowController.createShow);
+server.get('/', HomeController.getIndex);
+server.get('/shows', ShowController.getShows);
+server.get('/shows/id/:id', ShowController.getShow);
+server.get('/shows/create', ShowController.getCreateShow);
 server.post('/shows/create', ShowController.postCreateShow);
-server.get('/shows/:id', ShowController.show);
+server.get('/shows/update/:id', ShowController.getUpdateShow);
+server.post('/shows/update/:id', ShowController.postUpdateShow);
+server.get('/shows/delete/:id', ShowController.getDeleteShow);
 
 // Routes pour les APIs
-server.get('/api/', HomeController.indexApi);
-server.get('/api/shows', ShowController.showsApi);
-server.post('/api/shows/create', ShowController.createShowApi);
-server.get('/api/shows/:id', ShowController.showApi);
+server.get('/api/', HomeController.getIndexApi);
+server.get('/api/shows', ShowController.getShowsApi);
+server.get('/api/shows/id/:id', ShowController.getShowApi);
+server.post('/api/shows/create', ShowController.postCreateShowApi);
+server.post('/api/shows/update/:id', ShowController.postUpdateShowApi);
+server.post('/api/shows/delete/:id', ShowController.postDeleteShowApi);

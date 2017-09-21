@@ -10,3 +10,15 @@
     <img src="{{data.image}}" />
   <div>date : {{data.date}}</div>
 </div>
+
+<div class="text-center">
+  <a class="btn btn-primary" href="/shows/create" role="button">
+    Add a show
+  </a>
+  <a class="btn btn-secondary" href="/shows/update/{{data.id}}" role="button">
+    Update
+  </a>
+  <a class="btn btn-danger" href="/shows/delete/{{data.id}}" role="button">
+    Delete
+  </a>
+</div>

@@ -34,8 +34,36 @@ const ShowModel = {
     return Model.findOne({ _id }).exec();
   },
 
-  removeShows: () => {
+  createShow: (show) => {
+    return Model.create({
+      name: show.name,
+      venue: show.venue,
+      description: show.description,
+      capacity: show.capacity,
+      price: show.price,
+      image: show.image,
+      date: show.date,
+    });
+  },
+
+  updateShow: (_id, show) => {
+    return Model.findOneAndUpdate({ _id }, {
+      name: show.name,
+      venue: show.venue,
+      description: show.description,
+      capacity: show.capacity,
+      price: show.price,
+      image: show.image,
+      date: show.date,
+    }, {upsert: true}).exec();
+  },
+
+  deleteShows: () => {
     return Model.remove({}).exec();
+  },
+
+  deleteShow: (_id) => {
+    return Model.remove({ _id }).exec();
   },
 };
 

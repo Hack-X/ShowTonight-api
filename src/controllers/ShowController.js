@@ -5,7 +5,7 @@ import Errors from "../helpers/Errors";
 // Récupération du model
 import ShowModel from "../models/ShowModel";
 
-const getShows = () => {
+const shows = () => {
   // On fait appel à la fonction getShows du model
   // Celle ci renvoie tous les shows présents en base
   return ShowModel.getShows()
@@ -38,7 +38,7 @@ const getShows = () => {
   });
 }
 
-const getShow = (_id) => {
+const show = (_id) => {
   // On fait appel à la fonction getShow du model
   // Celle ci renvoie le show dont l'id est _id
   return ShowModel.getShow(_id)
@@ -67,11 +67,28 @@ const getShow = (_id) => {
   });
 }
 
+const createShow = (show) => {
+  // On fait appel à la fonction createShow du model
+  // Celle ci renvoie le show dont l'id est _id
+  return ShowModel.createShow(show);
+}
+
+const updateShow = (id, show) => {
+  // On fait appel à la fonction updateShow du model
+  // Celle ci renvoie le show dont l'id est _id
+  return ShowModel.updateShow(id, show);
+}
+
+const deleteShow = (id) => {
+  // On fait appel à la fonction deleteShow du model
+  // Celle ci renvoie le show dont l'id est _id
+  return ShowModel.deleteShow(id);
+}
 
 export default {
   // Controller des views
-  shows: (req, res) => {
-    getShows()
+  getShows: (req, res) => {
+    shows()
     .then((data) => {
       // data contient une liste de shows
       res.render('shows', { data });
@@ -81,7 +98,17 @@ export default {
     });
   },
 
-  createShow: (req, res) => {
+  getShow: (req, res) => {
+    show(req.params.id)
+    .then((data) => {
+      res.render('show', { data });
+    }, (err) => {
+      console.log(err);
+      res.status(Errors(err).code).send(Errors(err));
+    });
+  },
+
+  getCreateShow: (req, res) => {
     res.render('createShow');
   },
 
@@ -94,16 +121,51 @@ export default {
       price: req.body.price,
       image: req.body.image,
       date: req.body.date,
-    }
-    console.log('coucou', show);
+    };
 
-    res.redirect('/shows');
+    createShow(show)
+    .then((data) => {
+      res.redirect('/shows');
+    }, (err) => {
+      console.log(err);
+      res.status(Errors(err).code).send(Errors(err));
+    });
   },
 
-  show: (req, res) => {
-    getShow(req.params.id)
+  getUpdateShow: (req, res) => {
+    show(req.params.id)
     .then((data) => {
-      res.render('show', { data });
+      res.render('updateShow', { data });
+    }, (err) => {
+      console.log(err);
+      res.status(Errors(err).code).send(Errors(err));
+    });
+  },
+
+  postUpdateShow: (req, res) => {
+    let show = {
+      name: req.body.name,
+      venue: req.body.venue,
+      description: req.body.description,
+      capacity: req.body.capacity,
+      price: req.body.price,
+      image: req.body.image,
+      date: req.body.date,
+    };
+
+    updateShow(req.params.id, show)
+    .then((data) => {
+      res.redirect('/shows');
+    }, (err) => {
+      console.log(err);
+      res.status(Errors(err).code).send(Errors(err));
+    });
+  },
+
+  getDeleteShow: (req, res) => {
+    deleteShow(req.params.id)
+    .then((data) => {
+      res.redirect('/shows');
     }, (err) => {
       console.log(err);
       res.status(Errors(err).code).send(Errors(err));
@@ -111,8 +173,8 @@ export default {
   },
 
   // Controller des Apis
-  showsApi: (req, res) => {
-    getShows()
+  getShowsApi: (req, res) => {
+    shows()
     .then((data) => {
       // data contient maintenant la valeur retournée par la fonction _.sortBy
       // Si les opérations précédentes se sont bien passées, l'api renvoie une liste de shows
@@ -124,23 +186,60 @@ export default {
     });
   },
 
-  createShowApi: (req, res) => {
-    console.log(req.body);
-    res.send('ok');
-
-//    getShow(req.params.id)
-//    .then((data) => {
-//      res.send(data);
-//    }, (err) => {
-//      console.log(err);
-//      res.status(Errors(err).code).send(Errors(err));
-//    });
-  },
-
-  showApi: (req, res) => {
-    getShow(req.params.id)
+  getShowApi: (req, res) => {
+    show(req.params.id)
     .then((data) => {
       res.send(data);
+    }, (err) => {
+      console.log(err);
+      res.status(Errors(err).code).send(Errors(err));
+    });
+  },
+
+  postCreateShowApi: (req, res) => {
+    let show = {
+      name: req.body.name,
+      venue: req.body.venue,
+      description: req.body.description,
+      capacity: req.body.capacity,
+      price: req.body.price,
+      image: req.body.image,
+      date: req.body.date,
+    };
+
+    createShow(show)
+    .then((data) => {
+      res.send('ok');
+    }, (err) => {
+      console.log(err);
+      res.status(Errors(err).code).send(Errors(err));
+    });
+  },
+
+  postUpdateShowApi: (req, res) => {
+    let show = {
+      name: req.body.name,
+      venue: req.body.venue,
+      description: req.body.description,
+      capacity: req.body.capacity,
+      price: req.body.price,
+      image: req.body.image,
+      date: req.body.date,
+    };
+
+    updateShow(req.params.id, show)
+    .then((data) => {
+      res.send('ok');
+    }, (err) => {
+      console.log(err);
+      res.status(Errors(err).code).send(Errors(err));
+    });
+  },
+
+  postDeleteShowApi: (req, res) => {
+    deleteShow(req.params.id)
+    .then((data) => {
+      res.send('ok');
     }, (err) => {
       console.log(err);
       res.status(Errors(err).code).send(Errors(err));

@@ -2,12 +2,12 @@
 
 export default {
   // Controller des views
-  index: (req, res) => {
+  getIndex: (req, res) => {
     res.render('index');
   },
 
   // Controller des Apis
-  indexApi: (req, res) => {
+  getIndexApi: (req, res) => {
     res.status(200).send('hello world');
   },
 };
