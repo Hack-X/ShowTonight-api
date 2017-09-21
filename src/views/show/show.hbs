@@ -1,0 +1,24 @@
+<h1>Show</h1>
+
+<div>
+  <div>name : {{show.name}}</div>
+  <div>venue : {{show.venue}}</div>
+  <div>description : {{show.description}}</div>
+  <div>capacity : {{show.capacity}}</div>
+  <div>price : {{show.price}}</div>
+  <div>
+    <img src="{{show.image}}" />
+  <div>date : {{show.date}}</div>
+</div>
+
+<div class="text-center">
+  <a class="btn btn-primary" href="/shows/create" role="button">
+    Add a show
+  </a>
+  <a class="btn btn-secondary" href="/shows/update/{{show.id}}" role="button">
+    Update
+  </a>
+  <a class="btn btn-danger" href="/shows/delete/{{show.id}}" role="button">
+    Delete
+  </a>
+</div>

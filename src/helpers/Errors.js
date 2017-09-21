@@ -11,6 +11,16 @@ const list = {
     error: 'noShowError',
     error_description: 'Ce show n\'existe pas'
   },
+  noBookingsError: {
+    code: 500,
+    error: 'noBookingsError',
+    error_description: 'La base ne contient pas de booking'
+  },
+  noBookingError: {
+    code: 500,
+    error: 'noBookingError',
+    error_description: 'Ce booking n\'existe pas'
+  },
 };
 
 export default (err) => {

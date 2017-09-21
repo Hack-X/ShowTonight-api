@@ -1,0 +1,19 @@
+<h1>Booking</h1>
+
+<div>
+  <div>username : {{booking.username}}</div>
+  <div>showId : {{booking.showId}}</div>
+  <div>seats : {{booking.seats}}</div>
+</div>
+
+<div class="text-center">
+  <a class="btn btn-primary" href="/bookings/create" role="button">
+    Add a booking
+  </a>
+  <a class="btn btn-secondary" href="/bookings/update/{{booking.id}}" role="button">
+    Update
+  </a>
+  <a class="btn btn-danger" href="/bookings/delete/{{booking.id}}" role="button">
+    Delete
+  </a>
+</div>

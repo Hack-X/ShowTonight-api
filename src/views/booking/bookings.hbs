@@ -1,0 +1,42 @@
+<h1>Bookings</h1>
+
+<table class="table">
+ <thead>
+   <th>Username</th>
+   <th>ShowId</th>
+   <th>Seats</th>
+   <th>Actions</th>
+ </thead>
+
+  {{#list bookings}}
+
+  <tr>
+    <td>
+      <a class="btn btn-secondary btn-sm" href="/bookings/id/{{id}}" role="button">
+        {{username}}
+      </a>
+    </td>
+    <td>
+      {{showId}}
+    </td>
+    <td>
+      {{seats}}
+    </td>
+    <td>
+      <a class="btn btn-outline-secondary btn-sm" href="/bookings/update/{{id}}" role="button">
+        Update
+      </a>
+      <a class="btn btn-outline-danger btn-sm" href="/bookings/delete/{{id}}" role="button">
+        Delete
+      </a>
+    </td>
+  </tr>
+
+  {{/list}}
+</table>
+
+<div class="text-center">
+  <a class="btn btn-primary" href="/bookings/create" role="button">
+    Add a booking
+  </a>
+</div>

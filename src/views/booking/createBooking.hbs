@@ -1,0 +1,28 @@
+<h1>Create booking</h1>
+
+<form action="/bookings/create" method="post">
+  <div class="form-group">
+    <label for="username">Username*</label>
+    <input class="form-control" type="text" id="username" name="username" placeholder="Nom" required>
+  </div>
+
+  <div class="form-group">
+    <label for="showId">Show*</label>
+    <select class="form-control" id="showId" name="showId" required>
+      {{#list shows}}
+      <option value={{id}}>{{name}}</option>
+      {{/list}}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="seats">Seats*</label>
+    <input class="form-control" type="number" id="seats" name="seats" placeholder="Nombre de places" required>
+  </div>
+
+  <div class="text-center">
+    <button type="submit" class="btn btn-primary">
+      Create
+    </button>
+  </div>
+</form>

@@ -3,7 +3,7 @@
 import mongoose from "mongoose";
 mongoose.Promise = global.Promise;
 
-import SeedShows from "../helpers/SeedShows";
+import ShowSeeds from "../helpers/ShowSeeds";
 
 let Schema = new mongoose.Schema({
   name: { type: String },         // le nom du concert
@@ -17,10 +17,10 @@ let Schema = new mongoose.Schema({
 
 let Model = mongoose.model('Show', Schema);
 
-const ShowModel = {
-  seedShowsDb: () => {
+export default {
+  seedShows: () => {
     let promises = [];
-    for (let show of SeedShows){
+    for (let show of ShowSeeds){
       promises[promises.legth] = Model.create(show);
     }
     return Promise.all(promises);
@@ -66,5 +66,3 @@ const ShowModel = {
     return Model.remove({ _id }).exec();
   },
 };
-
-export default ShowModel;

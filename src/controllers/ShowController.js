@@ -61,8 +61,6 @@ const show = (_id) => {
       image: data.image,
       date: data.date,
     };
-
-    // Avant d'envoyer la réponse on la tri par ordre alphabétique croissant sur le champs name
     return response;
   });
 }
@@ -91,7 +89,7 @@ export default {
     shows()
     .then((data) => {
       // data contient une liste de shows
-      res.render('shows', { data });
+      res.render('show/shows', { shows: data });
     }, (err) => {
       console.log(err);
       res.status(Errors(err).code).send(Errors(err));
@@ -101,7 +99,7 @@ export default {
   getShow: (req, res) => {
     show(req.params.id)
     .then((data) => {
-      res.render('show', { data });
+      res.render('show/show', { show: data });
     }, (err) => {
       console.log(err);
       res.status(Errors(err).code).send(Errors(err));
@@ -109,7 +107,7 @@ export default {
   },
 
   getCreateShow: (req, res) => {
-    res.render('createShow');
+    res.render('show/createShow');
   },
 
   postCreateShow: (req, res) => {
@@ -135,7 +133,7 @@ export default {
   getUpdateShow: (req, res) => {
     show(req.params.id)
     .then((data) => {
-      res.render('updateShow', { data });
+      res.render('show/updateShow', { show: data });
     }, (err) => {
       console.log(err);
       res.status(Errors(err).code).send(Errors(err));
