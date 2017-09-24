@@ -30,6 +30,8 @@ const shows = () => {
         price: show.price,
         image: show.image,
         date: show.date,
+        lat: show.lat,
+        lng: show.lng
       }
     }
 
@@ -60,6 +62,8 @@ const show = (_id) => {
       price: data.price,
       image: data.image,
       date: data.date,
+      lat: data.lat,
+      lng: data.lng
     };
     return response;
   });
@@ -119,6 +123,8 @@ export default {
       price: req.body.price,
       image: req.body.image,
       date: req.body.date,
+      lat: req.body.lat,
+      lng: req.body.lng
     };
 
     createShow(show)
@@ -149,6 +155,8 @@ export default {
       price: req.body.price,
       image: req.body.image,
       date: req.body.date,
+      lat: req.body.lat,
+      lng: req.body.lng
     };
 
     updateShow(req.params.id, show)
@@ -169,6 +177,8 @@ export default {
       res.status(Errors(err).code).send(Errors(err));
     });
   },
+
+  // ************ API FROM THERE ************ //
 
   // Controller des Apis
   getShowsApi: (req, res) => {
@@ -203,6 +213,8 @@ export default {
       price: req.body.price,
       image: req.body.image,
       date: req.body.date,
+      lat: req.body.lat,
+      lng: req.body.lng
     };
 
     createShow(show)
