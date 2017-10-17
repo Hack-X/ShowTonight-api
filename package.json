@@ -4,7 +4,7 @@
   "description": "Api du workshop Hackx",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development nodemon -e js,hbs,scss index",
+    "dev": "nodemon -e js,hbs,scss index",
     "prod": "NODE_ENV=production PORT=8080 node index",
     "build": "babel src -d lib",
     "postinstall": "npm run build"

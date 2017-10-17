@@ -3,8 +3,14 @@
 ## Avant de lancer l'application
 npm install
 
-## Lancer l'application
-DB_USERNAME=xxx DB_PASSWORD=xxx npm run dev
+## Lancer l'application (Mac et Linux)
+DB_USERNAME=xxx DB_PASSWORD=xxx NODE_ENV=development npm run dev
+
+## Lancer l'application (Windows)
+setx DB_USERNAME xxx
+setx DB_PASSWORD xxx
+setx NODE_ENV=development
+npm run dev
 
 ## Initialiser la base
 POST sur http://localhost:5000/seeddb
