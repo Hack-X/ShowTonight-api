@@ -11,6 +11,7 @@ Le code va maintenant est en local sur votre machine. Vous pouvez ouvrir le doss
 Vous allez maintenant entrer dans le dossier en faisant un `cd ShowTonight-api` puis vous allez devoir lancer l'installation des dépendances avec `npm install`
 
 ## Lancer l'application
+Pour lancer la base, il vous faut 
 
 ### Mac et Linux
 DB_USERNAME=xxx DB_PASSWORD=xxx NODE_ENV=development npm run dev
@@ -22,15 +23,14 @@ setx NODE_ENV=development
 npm run dev
 
 Vous allez maintenant tester que le serveur est bien lancé en vous rendant dans votre navigateur sur [http://localhost:5000/](http://localhost:5000/)
+Vous pouvez accéder tout de suite au backoffice sur [http://localhost:5000/shows](http://localhost:5000/shows)
 
 ## Effectuer des requêtes sur l'API
-Pour commencer à effectuer des requêtes sur l'API, nous allons utiliser un logiciel du type de [Postman](https://www.getpostman.com/)
+Pour commencer à effectuer des requêtes sur l'API, nous allons utiliser un logiciel du type de [Postman](https://www.getpostman.com/).
 
-## Initialiser la base
-POST sur http://localhost:5000/seeddb
+* Pour commencer, nous allons remplir la base de données avec un POST sur `http://localhost:5000/seeddb`
 
-## Accéder au back office
-http://localhost:5000/shows
+
 
 ## Lien postman pour tester les apis
 https://www.getpostman.com/collections/1a324ea6496f4dc8de41
