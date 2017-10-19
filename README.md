@@ -20,7 +20,7 @@ Pour lancer la base, il vous faut
 ```bash
 setx DB_USERNAME xxx
 setx DB_PASSWORD xxx
-setx NODE_ENV=development
+setx NODE_ENV development
 npm run dev
 ```
 
