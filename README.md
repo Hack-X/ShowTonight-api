@@ -14,13 +14,15 @@ Vous allez maintenant entrer dans le dossier en faisant un `cd ShowTonight-api` 
 Pour lancer la base, il vous faut 
 
 ### Mac et Linux
-DB_USERNAME=xxx DB_PASSWORD=xxx NODE_ENV=development npm run dev
+`DB_USERNAME=xxx DB_PASSWORD=xxx NODE_ENV=development npm run dev`
 
 ### Windows
+```bash
 setx DB_USERNAME xxx
 setx DB_PASSWORD xxx
 setx NODE_ENV=development
 npm run dev
+```
 
 Vous allez maintenant tester que le serveur est bien lancé en vous rendant dans votre navigateur sur [http://localhost:5000/](http://localhost:5000/)
 Vous pouvez accéder tout de suite au backoffice sur [http://localhost:5000/shows](http://localhost:5000/shows)
