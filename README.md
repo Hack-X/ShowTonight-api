@@ -1,4 +1,4 @@
-# Installation de l'API d'exemple
+# Installation de l'API ShowTonight
 
 L'objectif dans ce workshop est de récupérer l'API d'exemple de ShowTonight pour commencer à jouer avec.
 
