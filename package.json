@@ -10,8 +10,8 @@
     "postinstall": "npm run build"
   },
   "engines": {
-    "node": "8.1.4",
-    "npm": "5.0.3"
+    "node": "8.9.1",
+    "npm": "5.5.1"
   },
   "dependencies": {
     "babel-cli": "6.23.0",
