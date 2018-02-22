@@ -15,14 +15,14 @@ const bookings = () => {
 
     let response = [];
     for (let booking of data){
-      response[response.length] = {
+      response.push({
         id: booking._id,
         username: booking.username,
         showId: booking.showId,
         seats: booking.seats,
         createdAt: booking.createdAt,
         updatedAt: booking.updatedAt,
-      }
+      });
     }
     return _.sortBy(response, 'username');
   });

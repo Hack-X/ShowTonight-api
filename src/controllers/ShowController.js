@@ -21,7 +21,7 @@ const shows = () => {
     let response = [];
     for (let show of data){
       // On parcours data. pour chaque élément, on garde les champs name, venue, description, capacity, price, image et date
-      response[response.length] = {
+      response.push({
         id: show._id,
         name: show.name,
         venue: show.venue,
@@ -32,7 +32,7 @@ const shows = () => {
         date: show.date,
         lat: show.lat,
         lng: show.lng
-      }
+      });
     }
 
     // Avant d'envoyer la réponse on la tri par ordre alphabétique croissant sur le champs name
